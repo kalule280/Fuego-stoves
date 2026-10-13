@@ -1,0 +1,184 @@
+/* ========================================
+   Fuego Stove Inventory - Theme System
+   Light Mode (default) + Dark Mode
+   ======================================== */
+
+/* ---------- LIGHT MODE (default) ---------- */
+:root {
+  --c-outline: #76777d;
+  --c-on-secondary-container: #fefcff;
+  --c-on-surface-variant: #45464d;
+  --c-on-secondary-fixed: #001a42;
+  --c-on-tertiary-fixed: #191c1e;
+  --c-outline-variant: #c6c6cd;
+  --c-on-tertiary-container: #818486;
+  --c-on-secondary-fixed-variant: #004395;
+  --c-surface-container: #e5eeff;
+  --c-surface-container-lowest: #ffffff;
+  --c-secondary-fixed: #d8e2ff;
+  --c-secondary-fixed-dim: #adc6ff;
+  --c-on-tertiary-fixed-variant: #444749;
+  --c-surface: #f8f9ff;
+  --c-surface-container-highest: #d3e4fe;
+  --c-on-surface: #0b1c30;
+  --c-primary-fixed: #dae2fd;
+  --c-primary-container: #131b2e;
+  --c-surface-bright: #f8f9ff;
+  --c-surface-tint: #565e74;
+  --c-primary-fixed-dim: #bec6e0;
+  --c-surface-container-high: #dce9ff;
+  --c-on-background: #0b1c30;
+  --c-secondary-container: #2170e4;
+  --c-secondary: #0058be;
+  --c-on-error-container: #93000a;
+  --c-tertiary-container: #c62828;
+  --c-surface-dim: #cbdbf5;
+  --c-tertiary: #c62828;
+  --c-surface-container-low: #eff4ff;
+  --c-on-primary-fixed-variant: #3f465c;
+  --c-on-tertiary: #ffffff;
+  --c-tertiary-fixed-dim: #c4c7c9;
+  --c-inverse-on-surface: #eaf1ff;
+  --c-error: #ba1a1a;
+  --c-surface-variant: #d3e4fe;
+  --c-on-primary-fixed: #131b2e;
+  --c-on-primary: #ffffff;
+  --c-inverse-primary: #bec6e0;
+  --c-inverse-surface: #213145;
+  --c-on-primary-container: #7c839b;
+  --c-on-error: #ffffff;
+  --c-tertiary-fixed: #e0e3e5;
+  --c-primary: #0b1c30;
+  --c-error-container: #ffdad6;
+  --c-background: #f8f9ff;
+  --c-on-secondary: #ffffff;
+}
+
+/* ---------- DARK MODE ---------- */
+.dark {
+  --c-outline: #5a6178;
+  --c-on-secondary-container: #ffffff;
+  --c-on-surface-variant: #c8cdd8;
+  --c-on-secondary-fixed: #1a1a2e;
+  --c-on-tertiary-fixed: #fff0f0;
+  --c-outline-variant: #2d3554;
+  --c-on-tertiary-container: #ffffff;
+  --c-on-secondary-fixed-variant: #0f1b3d;
+  --c-surface-container: #141c33;
+  --c-surface-container-lowest: #0d1525;
+  --c-secondary-fixed: #1e3a6e;
+  --c-secondary-fixed-dim: #162d58;
+  --c-on-tertiary-fixed-variant: #ff6b6b;
+  --c-surface: #0f1729;
+  --c-surface-container-highest: #1e2a45;
+  --c-on-surface: #e8ecf4;
+  --c-primary-fixed: #1a2847;
+  --c-primary-container: #c62828;
+  --c-surface-bright: #1a2540;
+  --c-surface-tint: #3a5ba0;
+  --c-primary-fixed-dim: #152040;
+  --c-surface-container-high: #182240;
+  --c-on-background: #e8ecf4;
+  --c-secondary-container: #1b3668;
+  --c-secondary: #2962a8;
+  --c-on-error-container: #ffffff;
+  --c-tertiary-container: #c62828;
+  --c-surface-dim: #0a1020;
+  --c-tertiary: #e53935;
+  --c-surface-container-low: #111a2e;
+  --c-on-primary-fixed-variant: #8eaad4;
+  --c-on-tertiary: #ffffff;
+  --c-tertiary-fixed-dim: #b71c1c;
+  --c-inverse-on-surface: #0f1729;
+  --c-error: #ef5350;
+  --c-surface-variant: #1e2a45;
+  --c-on-primary-fixed: #e8ecf4;
+  --c-on-primary: #ffffff;
+  --c-inverse-primary: #1a3a6e;
+  --c-inverse-surface: #e8ecf4;
+  --c-on-primary-container: #ffffff;
+  --c-on-error: #ffffff;
+  --c-tertiary-fixed: #ff8a80;
+  --c-primary: #1a3a6e;
+  --c-error-container: #b71c1c;
+  --c-background: #0f1729;
+  --c-on-secondary: #ffffff;
+}
+
+/* ---------- Base Body Styles ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--c-background);
+  color: var(--c-on-surface);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode wallpaper */
+body {
+  background-image: linear-gradient(rgba(248, 249, 255, 0.88), rgba(248, 249, 255, 0.88)), url('./images/fuego wall.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Dark mode wallpaper overlay */
+.dark body,
+body.dark-bg {
+  background-image: linear-gradient(rgba(15, 23, 41, 0.90), rgba(15, 23, 41, 0.92)), url('./images/fuego wall.jpg');
+}
+
+/* Smooth transitions for theme switching */
+*, *::before, *::after {
+  transition: background-color 0.25s ease, color 0.15s ease, border-color 0.25s ease;
+}
+
+.top-tabs {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.top-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.top-tabs button {
+  flex: 0 0 auto;
+}
+
+@media print {
+  .fuego-logo {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @page {
+    size: A4;
+    margin: 5mm;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+  
+  #printable, #printable * {
+    visibility: visible;
+  }
+  
+  #printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 15px !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: avoid;
+    page-break-before: avoid;
+  }
+}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuego - Stove Inventory & Transaction Management</title>
+    <!-- Tailwind CSS with forms and container-queries -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+          darkMode: "class",
+          theme: {
+              extend: {
+                  "colors": {
+                      "outline": "var(--c-outline)",
+                      "on-secondary-container": "var(--c-on-secondary-container)",
+                      "on-surface-variant": "var(--c-on-surface-variant)",
+                      "on-secondary-fixed": "var(--c-on-secondary-fixed)",
+                      "on-tertiary-fixed": "var(--c-on-tertiary-fixed)",
+                      "outline-variant": "var(--c-outline-variant)",
+                      "on-tertiary-container": "var(--c-on-tertiary-container)",
+                      "on-secondary-fixed-variant": "var(--c-on-secondary-fixed-variant)",
+                      "surface-container": "var(--c-surface-container)",
+                      "surface-container-lowest": "var(--c-surface-container-lowest)",
+                      "secondary-fixed": "var(--c-secondary-fixed)",
+                      "secondary-fixed-dim": "var(--c-secondary-fixed-dim)",
+                      "on-tertiary-fixed-variant": "var(--c-on-tertiary-fixed-variant)",
+                      "surface": "var(--c-surface)",
+                      "surface-container-highest": "var(--c-surface-container-highest)",
+                      "on-surface": "var(--c-on-surface)",
+                      "primary-fixed": "var(--c-primary-fixed)",
+                      "primary-container": "var(--c-primary-container)",
+                      "surface-bright": "var(--c-surface-bright)",
+                      "surface-tint": "var(--c-surface-tint)",
+                      "primary-fixed-dim": "var(--c-primary-fixed-dim)",
+                      "surface-container-high": "var(--c-surface-container-high)",
+                      "on-background": "var(--c-on-background)",
+                      "secondary-container": "var(--c-secondary-container)",
+                      "secondary": "var(--c-secondary)",
+                      "on-error-container": "var(--c-on-error-container)",
+                      "tertiary-container": "var(--c-tertiary-container)",
+                      "surface-dim": "var(--c-surface-dim)",
+                      "tertiary": "var(--c-tertiary)",
+                      "surface-container-low": "var(--c-surface-container-low)",
+                      "on-primary-fixed-variant": "var(--c-on-primary-fixed-variant)",
+                      "on-tertiary": "var(--c-on-tertiary)",
+                      "tertiary-fixed-dim": "var(--c-tertiary-fixed-dim)",
+                      "inverse-on-surface": "var(--c-inverse-on-surface)",
+                      "error": "var(--c-error)",
+                      "surface-variant": "var(--c-surface-variant)",
+                      "on-primary-fixed": "var(--c-on-primary-fixed)",
+                      "on-primary": "var(--c-on-primary)",
+                      "inverse-primary": "var(--c-inverse-primary)",
+                      "inverse-surface": "var(--c-inverse-surface)",
+                      "on-primary-container": "var(--c-on-primary-container)",
+                      "on-error": "var(--c-on-error)",
+                      "tertiary-fixed": "var(--c-tertiary-fixed)",
+                      "primary": "var(--c-primary)",
+                      "error-container": "var(--c-error-container)",
+                      "background": "var(--c-background)",
+                      "on-secondary": "var(--c-on-secondary)"
+                  },
+                  "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+                  },
+                  "spacing": {
+                      "margin-desktop": "32px",
+                      "gutter": "16px",
+                      "unit": "4px",
+                      "lg": "24px",
+                      "container-max": "100%",
+                      "md": "16px",
+                      "xs": "4px",
+                      "xl": "40px",
+                      "margin-mobile": "16px",
+                      "sm": "8px"
+                  },
+                  "fontFamily": {
+                      "headline-lg-mobile": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-md": ["JetBrains Mono"],
+                      "body-lg": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "label-sm": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-lg": ["Inter"]
+                  },
+                  "fontSize": {
+                      "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                      "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                      "label-md": ["14px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                      "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                      "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                      "label-sm": ["12px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                      "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                      "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                      "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                      "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                  }
+              }
+          }
+      }
+    </script>
+    <style>
+      /* Scrollbar hiding for clean UI */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
